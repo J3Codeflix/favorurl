@@ -1,0 +1,47 @@
+<div class="modal-header">
+    <h5 class="modal-title text-center">Create New Link</h5>
+    <button type="button" class="close" aria-label="Close" (click)="activeModal.dismiss('Cross click')">
+    <span aria-hidden="true">&times;</span>
+    </button>
+</div>
+<div class="modal-body"> 
+    <form>
+        <div class="form-group mb-3">
+            <div class="label">
+                <label>Destination URL</label>
+            </div>
+            <div class="row">
+                <div class="col-lg-4 input-group input-group-alternative">
+                    <select [(ngModel)]="protocol" name="protocol">
+                        <option ng-selected="selected" value="http://">http://</option>
+                        <option value="https://">https://</option>
+                    </select>
+                </div>
+                <div class="col-lg-8 input-group input-group-alternative">
+                    <input [(ngModel)]="destinationUrl" name="destinationUrl" class="form-control" placeholder="Your Destination URL" type="text" (focus)="focus1=true" (blur)="focus1=false">
+                </div>
+            </div>
+        </div>
+        <div class="form-group mb-3" >
+            <div class="label">
+                <label>Branded Domain</label>
+            </div>
+            <div class="row">
+                <div class="col-lg-4 input-group input-group-alternative">
+                    <select [(ngModel)]="brandedDomain" name="brandedDomain">
+                        <option value="favorurl.com">favorurl.com</option>
+                    </select>
+                </div>
+                <div class="col-lg-8 input-group input-group-alternative">
+                    <input [value]="slash" class="form-control" placeholder="Slash Tag" type="text" (focus)="focus1=true" (blur)="focus1=false">
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+<div class="modal-footer">
+    <div class="lefort-side">
+        <button type="button" class="btn custom-btn-primary" (click)="onSubmit()">Create New</button>
+    </div>
+    <div class="divider"></div>
+</div>

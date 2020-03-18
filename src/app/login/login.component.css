@@ -1,0 +1,20 @@
+.login-page .login-logo {
+    width:60%;
+}
+
+.login-page .card-header {
+    padding:40px;
+    border-bottom: none;
+}
+
+.login-page .card-body {
+    padding:0px;
+    background-color: white;
+}
+
+.login-page .login-btn{
+    color: #fff;
+    background-color: #2281c2;
+    border-color: #2281c2;
+    box-shadow: 0 4px 6px rgba(50, 50, 93, 0.11), 0 1px 3px rgba(0, 0, 0, 0.08);
+}

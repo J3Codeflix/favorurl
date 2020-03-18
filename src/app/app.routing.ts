@@ -8,21 +8,42 @@ import { ProfileComponent } from './profile/profile.component';
 import { SignupComponent } from './signup/signup.component';
 import { LandingComponent } from './landing/landing.component';
 import { LoginComponent } from './login/login.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
+import { AuthGuardService } from '../services/auth/auth-guard.service';
+import { LoginAuthGuardService } from '../services/auth/login-guard.service';
 
 const routes: Routes =[
-    { path: 'home',             component: HomeComponent },
-    { path: 'user-profile',     component: ProfileComponent },
-    { path: 'register',           component: SignupComponent },
-    { path: 'landing',          component: LandingComponent },
-    { path: 'login',          component: LoginComponent },
-    { path: '', redirectTo: 'home', pathMatch: 'full' }
+    { 
+      path: '', 
+      redirectTo: 'login', 
+      pathMatch: 'full' 
+    },
+    { 
+      path: 'login',          
+      component: LoginComponent,
+      // canActivate: [LoginAuthGuardService]
+    },
+    { 
+      path: 'register',           
+      component: SignupComponent,
+      // canActivate: [LoginAuthGuardService]
+    },
+    { path: 'dashboard',             
+      component: DashboardComponent,
+      canActivate: [AuthGuardService]
+    },
+    { 
+      path: 'user-profile',     
+      component: ProfileComponent,
+      canActivate: [AuthGuardService]
+    },
 ];
 
 @NgModule({
   imports: [
     CommonModule,
     BrowserModule,
-    RouterModule.forRoot(routes,{
+    RouterModule.forRoot(routes, {
       useHash: true
     })
   ],

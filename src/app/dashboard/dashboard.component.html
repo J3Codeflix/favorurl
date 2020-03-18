@@ -1,0 +1,55 @@
+<app-navbar></app-navbar>
+<main>
+<section class="section section-shaped section-lg login-page">
+    <div class="shape shape-style-1 bg-gradient-default">
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    </div>
+    <div class="container dashboard-main">
+        <div class="row justify-content-space menu-content">
+            <div class="col-lg-2 align-start">
+                {{ total }}
+            </div>
+            <div class="col-lg-2 align-end">
+                <button class="btn custom-btn-primary" type="button" (click)="openModal()">New Link</button>
+            </div>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-lg-12 loop-container">
+                <!-- link loops -->
+                <div class="row links-list" *ngFor="let link of links">
+                    <div class="col-lg-1">
+                        <i class="fa fa-globe"></i>
+                    </div>
+                    <div class="col-lg-4 link-a">
+                        <h3>
+                            <a href="{{  link.destination_url }}" target="_blank">{{ link.branded_domain }}/{{link.slash_tag}}</a>
+                        </h3>
+                        <h6>{{ link.title }}</h6>
+                    </div>
+                    <div class="col-lg-4">
+                        <p href="#">{{ link.clicks }} clicks</p>
+                    </div>
+                    <div class="col-lg-3">
+                        <p class="link-time" href="#">{{ link.time_ago }}</p>
+                        <p class="link-buttons" href="#">
+                            <a (click)="detailsLink(link)">
+                                <i style="margin-right:10px;" class="fa fa-pencil"></i>
+                            </a>
+                            <a (click)="deleteLink(link.id)">
+                                <i class="fa fa-trash"></i>
+                            </a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+</main>

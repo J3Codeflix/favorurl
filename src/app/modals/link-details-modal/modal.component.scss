@@ -1,0 +1,69 @@
+.custom-btn-primary {
+    color: #fff;
+    background-color: #2281c2;
+    border-color: #2281c2;
+    box-shadow: 0 4px 6px rgba(50, 50, 93, 0.11), 0 1px 3px rgba(0, 0, 0, 0.08);
+}
+
+.justify-content-space{
+    justify-content: space-between;
+}
+.table {
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.form {
+    margin-top: 30px;
+}
+
+.nav-tabs {
+    margin-bottom: 20px !important;
+}
+
+.stats-chart {
+    padding: 24px 24px 8px !important;
+    border-radius: 8px !important;
+    background-color: #f9f9fa !important;
+    border: 1px solid #e8e9ea !important;
+}
+
+.modal-row {
+    margin-right: 0px;
+    margin-left: 0px;
+}
+
+.stats-content {
+    padding: 20px;
+}
+
+.stats {
+    max-width: 100%;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.td-column {
+    width:50%;
+    border: 1px solid #ddd;
+    padding: 8px;
+    font-size: 14px;
+    font-weight: 100;
+}
+
+.td-column-no-data {
+    width:100%;
+    border: 1px solid #ddd;
+    padding: 8px;
+    font-size: 14px;
+    font-weight: 100;
+}
+
+.clicks-title {
+    font-size: 14px;
+    padding-right: 20px;
+}
+
+.clicks {
+    margin-bottom:20px;
+}
