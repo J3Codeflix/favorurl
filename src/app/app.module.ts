@@ -35,6 +35,9 @@ import * as Maps from 'fusioncharts/fusioncharts.maps';
 import * as Map from 'fusioncharts/maps/'
 import * as World from 'fusioncharts/maps/fusioncharts.world';
 import * as FusionTheme from 'fusioncharts/themes/fusioncharts.theme.fusion';
+import { ResetComponent } from './reset-password/reset.component';
+import { ResetPasswordComponent } from './password-input/password-input.component';
+import { EmailConfirmComponent } from './email-confirm/email-confirm.component';
 FusionChartsModule.fcRoot(FusionCharts, Charts, Zune, Maps, World, FusionTheme);
 @NgModule({
   declarations: [
@@ -46,6 +49,9 @@ FusionChartsModule.fcRoot(FusionCharts, Charts, Zune, Maps, World, FusionTheme);
     FooterComponent,
     LoginComponent,
     DashboardComponent,
+    ResetComponent,
+    ResetPasswordComponent,
+    EmailConfirmComponent
   ],
   imports: [
     BrowserModule,

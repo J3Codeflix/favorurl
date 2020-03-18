@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="240" height="160" viewBox="0 0 240 160">
+    <defs>
+        <circle id="a" cx="150" cy="44" r="18"/>
+    </defs>
+    <g fill="none" fill-rule="evenodd">
+        <g fill="#8355E1" transform="translate(22)">
+            <circle cx="62" cy="62" r="62" opacity=".04"/>
+            <circle cx="172" cy="64" r="24" opacity=".06"/>
+            <circle cx="90" cy="148" r="12" opacity=".08"/>
+        </g>
+        <path fill="#E8E9EA" d="M62 67.818L120 44l58 23.818V126a8 8 0 0 1-8 8H70a8 8 0 0 1-8-8V67.818z"/>
+        <path fill="#FFF" d="M63 68.818L120 45l57 23.818V126a7 7 0 0 1-7 7H70a7 7 0 0 1-7-7V68.818z"/>
+        <path fill="#212732" d="M76 38h80v96H76z" opacity=".1"/>
+        <path fill="#2C96DF" d="M80 34h80v100H80z"/>
+        <rect width="32" height="4" x="88" y="50" fill="#FFF" opacity=".5" rx="2"/>
+        <rect width="44" height="4" x="88" y="62" fill="#FFF" opacity=".5" rx="2"/>
+        <rect width="56" height="4" x="88" y="74" fill="#FFF" opacity=".5" rx="2"/>
+        <use fill="#FFF" xlink:href="#a"/>
+        <circle cx="150" cy="44" r="17.5" stroke="#2C96DF"/>
+        <path fill="#2C96DF" fill-rule="nonzero" d="M150 38a2 2 0 1 1 0-4 2 2 0 0 1 0 4zm0 16a2 2 0 0 1-2-2v-8a2 2 0 0 1 4 0v8a2 2 0 0 1-2 2z"/>
+        <path fill="#E8E9EA" d="M62 68l58 28.875L178 68v58a8 8 0 0 1-8 8H70a8 8 0 0 1-8-8V68z"/>
+        <path fill="#FFF" d="M63 70l57 27.875L177 70v56a7 7 0 0 1-7 7H70a7 7 0 0 1-7-7V70z"/>
+        <path fill="#E8E9EA" d="M125.358 92.833L171 134H69l45.642-41.167a8 8 0 0 1 10.716 0z"/>
+        <path fill="#FFF" d="M124.73 93.336L168 133H72l43.27-39.664a7 7 0 0 1 9.46 0z"/>
+    </g>
+</svg>

@@ -1,0 +1,69 @@
+<main>
+    <section class="section section-shaped section-lg register-page">
+      <div class="shape shape-style-1 bg-gradient-default">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      <div class="container pt-lg-md">
+        <div class="row justify-content-center">
+          <div class="col-lg-5">
+            <div class="card bg-secondary border-0">
+              <!-- FORM TITLE -->
+              <div class="card-header bg-white">
+                <div class="text-muted text-center mb-3">
+                  <img class="register-logo" src="./assets/img/brand/rebrandly-logo.png">
+                </div>
+                 <div class="text-center">
+                  <h4>Create a new Account</h4>
+                </div>
+              </div>
+              <!-- FORM -->
+              <div class="card-body">
+                <form role="form">
+                  <div class="form-group">
+                    <div class="label">
+                      <label>Email</label>
+                    </div>
+                    <div class="input-group input-group-alternative">
+                      <input required name="email" [(ngModel)]="reset.email" class="form-control" placeholder="Your Email" type="email" (focus)="focus=true" (blur)="focus=false">
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <div class="label">
+                      <label>Password</label>
+                    </div>
+                    <div class="input-group input-group-alternative">
+                      <input required name="password" [(ngModel)]="reset.password" class="form-control" placeholder="Your Password" type="password" (focus)="focus1=true" (blur)="focus1=false">
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <div class="label">
+                      <label>Confirm Password</label>
+                    </div>
+                    <div class="input-group input-group-alternative">
+                      <input required name="password_confirmation" [(ngModel)]="reset.password_confirmation" class="form-control" placeholder="Repeat Password" type="password" (focus)="focus1=true" (blur)="focus1=false">
+                    </div>
+                  </div>
+                  <div class="text-center">
+                    <button style="width:100%" type="button" class="btn btn-primary my-4 register-btn" (click)="resetPassword()">Set Password</button>
+                  </div>
+                </form>
+              </div>
+            </div>
+            <div class="row text-center">
+              <div style="width:100%">
+                  <p>Already have an account? <a href="#">Login</a></p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  

@@ -11,6 +11,9 @@ import { LoginComponent } from './login/login.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { AuthGuardService } from '../services/auth/auth-guard.service';
 import { LoginAuthGuardService } from '../services/auth/login-guard.service';
+import { ResetComponent } from './reset-password/reset.component';
+import { ResetPasswordComponent } from './password-input/password-input.component';
+import { EmailConfirmComponent } from './email-confirm/email-confirm.component';
 
 const routes: Routes =[
     { 
@@ -36,6 +39,18 @@ const routes: Routes =[
       path: 'user-profile',     
       component: ProfileComponent,
       canActivate: [AuthGuardService]
+    },
+    { 
+      path: 'reset-password/:token',     
+      component: ResetComponent,
+    },
+    { 
+      path: 'forgot-password',     
+      component: ResetPasswordComponent,
+    },
+    { 
+      path: 'email-confirmation',     
+      component: EmailConfirmComponent,
     },
 ];
 

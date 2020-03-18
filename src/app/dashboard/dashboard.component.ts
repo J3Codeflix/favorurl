@@ -8,6 +8,7 @@ import { CreateLinkModel } from '../../models/create-link.model';
 import { NotifierAppService } from '../../services/notifier/notifier.service';
 import { LinkDetailsModal } from '../modals/link-details-modal/modal.component';
 import { GetLinkDetailsModel } from '../../models/get-link-details.model';
+import { SharedDetails } from '../shared/shared-details';
 
 @Component({
   selector: 'app-dashboard',
@@ -35,7 +36,7 @@ export class DashboardComponent implements OnInit {
     this.counts = this.count > 1 ? 'Links' : 'Link';
     this.total = this.count.toString() + ' ' + this.counts;
     this.links.push(...links);
-
+    SharedDetails.links.push(...links);
     console.log("DashboardComponent -> ngOnInit -> this.links", this.links);
 
     links.forEach(linkDetails => {

@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { SharedDetails } from '../shared/shared-details';
+import { SessionStorageService } from 'angular-web-storage';
+import { Router } from '@angular/router';
 
 @Component({
     selector: 'app-profile',
@@ -8,8 +11,19 @@ import { Component, OnInit } from '@angular/core';
 
 export class ProfileComponent implements OnInit {
 
-    constructor() { }
+    count: number;
+    name: string
+    constructor(
+        private session: SessionStorageService,
+        private router: Router) { }
 
-    ngOnInit() {}
+    ngOnInit() {
+        this.count = SharedDetails.links.length;
+        this.name = this.session.get('_user').name;
+    }
+
+    resetPassword() {
+        this.router.navigateByUrl('forgot-password');
+    }
 
 }

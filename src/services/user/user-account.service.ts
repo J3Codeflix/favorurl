@@ -11,6 +11,7 @@ import { GetLinkDetailsModel } from '../../models/get-link-details.model';
 import { timeout, retry, catchError, switchMap, finalize } from 'rxjs/operators';
 import { _throw } from 'rxjs/observable/throw';
 import { of } from 'rxjs';
+import { ResetModel } from '../../models/reset.model';
 
 @Injectable()
 export class UserAccountService {
@@ -83,5 +84,22 @@ export class UserAccountService {
         return this.httpClient.post(GlobalConfig.ADD_AUTH_URL('api/createLink'), createLinkModel , {headers: header} )
                .toPromise()
                .then(response => response as Links[])
+    }
+
+    createResetPassword(email: string): Promise<any>{
+        // const header = {
+        //     'Authorization': `Bearer ${this.session.get('_at')}`
+        // }
+        return this.httpClient.post(GlobalConfig.ADD_AUTH_URL('api/create'), { email} , {} )
+               .toPromise()
+               .then(response => response)
+    }
+    resetPassword(reset: ResetModel): Promise<any>{
+        // const header = {
+        //     'Authorization': `Bearer ${this.session.get('_at')}`
+        // }
+        return this.httpClient.post(GlobalConfig.ADD_AUTH_URL('api/reset'), reset , {} )
+               .toPromise()
+               .then(response => response)
     }
 }
