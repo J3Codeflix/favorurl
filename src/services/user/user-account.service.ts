@@ -54,11 +54,9 @@ export class UserAccountService {
         return this.httpClient.get(GlobalConfig.ADD_AUTH_URL('api/getLinkDetails'), { headers: options.headers , params} )
             .pipe(
                 timeout(9000000),
-                
             )
             .toPromise()
             .then(response =>{
-                console.log("UserAccountService -> getLinkDetails -> response", response)
                 return response as Links[]
             });
     }

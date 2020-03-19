@@ -24,16 +24,15 @@ export class LoginComponent {
     
   onSubmit(){
     
-    this.accountService.login(this.login).subscribe((response:boolean) => {
-      if(response){
+    this.accountService.login(this.login).then((response: any) => {
+      if(response.accessToken){
         this.notifier.showSuccessNotification('Login Successful');
         this.router.navigateByUrl('/dashboard');
       }else{
         this.notifier.showErrorNotification('Invalid Credentials');
       }
-    },
-    (err) => {
-      console.log('error:: ', err);
+    }).catch((err) => {
+      this.notifier.showErrorNotification('Invalid Credentials');
     });
   }
 

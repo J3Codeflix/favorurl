@@ -37,7 +37,6 @@ export class DashboardComponent implements OnInit {
     this.total = this.count.toString() + ' ' + this.counts;
     this.links.push(...links);
     SharedDetails.links.push(...links);
-    console.log("DashboardComponent -> ngOnInit -> this.links", this.links);
 
     links.forEach(linkDetails => {
       const detailsReq: GetLinkDetailsModel = {
@@ -104,7 +103,6 @@ export class DashboardComponent implements OnInit {
         this.notifier.showWarningNotification('Please wait while the details is getting loaded');
       }
     }).catch((err) => {
-    console.log("DashboardComponent -> detailsLink -> err", err)
       this.notifier.showErrorNotification('Could not get link details');
     });
 

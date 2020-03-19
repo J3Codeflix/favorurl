@@ -28,14 +28,15 @@ export class AuthService {
 
   public login(login: LoginModel) {
     return this.httpClient.post(GlobalConfig.ADD_AUTH_URL('api/login') , login , { observe: 'body' })
-            .pipe(map(authenticateSuccess.bind(this)));
-    function authenticateSuccess(response) {
-        if (response.accessToken.length > 0) {
-            this.storeAuthenticationToken(response, login);
-            return true;
-        }
-        return false;
-    }
+            .toPromise()
+            .then((response: any) => {
+                if (response.accessToken) {
+                  this.storeAuthenticationToken(response);
+                  return response;
+                } else {
+                  return response;
+                }
+            }).catch((err) => {return err})
   }
 
   public signUp(login: SignUpModel) {

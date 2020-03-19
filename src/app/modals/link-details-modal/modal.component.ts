@@ -38,10 +38,10 @@ export class LinkDetailsModal implements OnInit {
         
     ngOnInit(){
         this.linkStats.push(...this.link.link_stats);
-        console.log("LinkDetailsModal -> linkClicksDetails", this.linkClicksDetails)
         this.totalClicks = this.linkClicksDetails.total_clicks[0].total_clicks;
         this.clicksToday = this.linkClicksDetails.total_clicks_today[0].total_clicks_today;
-        this.lastClick = this.linkClicksDetails.last_click[0].created_at;
+        this.lastClick = this.linkClicksDetails.last_click.length > 0 ? this.linkClicksDetails.last_click[0].created_at : 0;
+        console.log("LinkDetailsModal -> ngOnInit -> this.linkClicksDetails", this.linkClicksDetails)
         this.mostPopularHours = {
             chart: {
               caption: '',
@@ -94,37 +94,34 @@ export class LinkDetailsModal implements OnInit {
     }
 
     loadMap() {
-        const data = []
-        const keys = []
-        const values = []
-        if(this.linkClicksDetails.countries.length > 0) {
-          this.linkClicksDetails.countries[0].forEach((value, index) => {
-              if(index % 2 === 0){
-                  keys.push(value.toUpperCase())
-              }else[
-                  values.push(value)
-              ]
-          });
-          
-          for (let index = 0; index < keys.length; index++) {
-              for (let index2 = 0; index2 < values.length; index2++) {
-                  data.push({id:keys[index],value:values[index2],showLabel: '1'})
-              }
-          
-          }
-        }
+      const data = [{id: '117', value: '100', useSNameInLabels: 1, showLabel: 1}]
+      const keys = []
+      const values = []
+      if(this.linkClicksDetails.countries.length > 0) {
+        this.linkClicksDetails.countries[0].forEach((value, index) => {
+          if(index % 2 === 0){
+            keys.push(value.toUpperCase())
+          }else[
+            values.push(value)
+          ]
+        });
         
-        console.log("LinkDetailsModal -> loadMap -> data", data)
-
+        for (let index = 0; index < keys.length; index++) {
+          for (let index2 = 0; index2 < values.length; index2++) {
+            // data.push({id:keys[index],value:values[index2], useSNameInLabels: 1, showLabel: 1})
+          }
+          
+        }
+      }
+      
+      console.log("LinkDetailsModal -> loadMap -> data", data)
         this.mapSource = {
             chart: {
-              caption: "",
-              subcaption: "",
-              numbersuffix: "",
-              includevalueinlabels: "1",
-              labelsepchar: ": ",
+              entityFillColor: "#A8A8A8",
               entityFillHoverColor: "#FFF9C4",
-              theme: "zune"
+              nullEntityColor: '#d9d9d9',
+              theme: "fusion",
+              hoverOnNull: "0"
             },
             colorrange: {
               minvalue: "0",
@@ -133,18 +130,15 @@ export class LinkDetailsModal implements OnInit {
               color: [
           
                 {
-                  minvalue: "0.5",
-                  maxvalue: "1.0",
+                  maxvalue: 30,
                   color: "#FFD74D"
                 },
                 {
-                  minvalue: "1.0",
-                  maxvalue: "2.0",
+                  maxvalue: 60,
                   color: "#FB8C00"
                 },
                 {
-                  minvalue: "2.0",
-                  maxvalue: "3.0",
+                  maxvalue: 100,
                   color: "#E65100"
                 }
               ]

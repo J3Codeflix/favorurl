@@ -32,13 +32,13 @@ import * as FusionCharts from 'fusioncharts';
 import * as Charts from 'fusioncharts/fusioncharts.charts';
 import * as Zune from 'fusioncharts/themes/fusioncharts.theme.zune';
 import * as Maps from 'fusioncharts/fusioncharts.maps';
-import * as Map from 'fusioncharts/maps/'
+import * as Worldwithcountries from 'fusioncharts/maps/fusioncharts.worldwithcountries'
 import * as World from 'fusioncharts/maps/fusioncharts.world';
 import * as FusionTheme from 'fusioncharts/themes/fusioncharts.theme.fusion';
 import { ResetComponent } from './reset-password/reset.component';
 import { ResetPasswordComponent } from './password-input/password-input.component';
 import { EmailConfirmComponent } from './email-confirm/email-confirm.component';
-FusionChartsModule.fcRoot(FusionCharts, Charts, Zune, Maps, World, FusionTheme);
+FusionChartsModule.fcRoot(FusionCharts, Charts, Zune, Maps, World, Worldwithcountries, FusionTheme);
 @NgModule({
   declarations: [
     AppComponent,
